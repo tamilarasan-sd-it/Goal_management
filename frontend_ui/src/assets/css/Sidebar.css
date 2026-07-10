@@ -1,0 +1,74 @@
+/* d:\GOAL_NEW_VERSION\frontend_ui\src\assets\css\Sidebar.css */
+.sidebar {
+  width: 250px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1030;
+  transition: width 0.3s ease-in-out;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+  white-space: nowrap;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.collapsed .sidebar-header h3 {
+  font-size: 1.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: #495057;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.sidebar-link:hover {
+  background-color: #f8f9fa;
+  color: #B194E4;
+}
+
+.sidebar-link.active {
+  background-color: #B194E4;
+  color: white;
+  border-radius: 8px;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.sidebar-icon {
+  min-width: 48px;
+  text-align: center;
+}
+
+.sidebar-text {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar.collapsed .sidebar-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}

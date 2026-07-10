@@ -1,0 +1,246 @@
+/* ---------------------------------------------------- */
+/* Split Screen Layout */
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color:#ffffff !important;
+}
+
+/* Left side Lottie container */
+.login-image {
+  flex: 2;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff !important;
+}
+
+/* Make Lottie animation fill the container like a background */
+.login-image > div {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Optional dark overlay for readability */
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(233, 235, 229, 0.25); /* adjust opacity if needed */
+  pointer-events: none;
+}
+
+/* Right side container */
+.login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  /* Roll-in animation */
+  animation: rollInRight 1.5s ease-out forwards;
+  background: linear-gradient(to right, #eff6ff, #dbeafe);
+}
+
+/* ---------------------------------------------------- */
+/* Login box with fade-in + scale */
+.login-box {
+ background: linear-gradient(135deg, #267dff, #1e40af); /* Blue gradient */
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+  animation: fadeInScale 1.5s ease-out forwards;
+}
+
+.login-box:hover {
+  transform: scale(1.01);
+}
+
+/* Icon styling */
+.login-icon {
+  width: 300px;           /* adjust width */
+  height: 180px;          /* adjust height */
+  background-image: url('/pdmr_logo1.png'); /* note: relative to public folder */
+  background-size: contain; /* maintain aspect ratio */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* Heading + subtext */
+.login-heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.login-subtext {
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 1rem;
+  color:#ffffff !important;
+}
+
+/* ---------------------------------------------------- */
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  
+}
+
+.login-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin:0em !important;
+  color:#ffffff !important;
+}
+
+.login-input {
+  margin:0em !important;
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1.25rem;
+  border: 3px solid #d1d5db;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #1f2937;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-input::placeholder {
+  color: #9ca3af;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* ---------------------------------------------------- */
+/* Button */
+.login-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(to right, #17eb04, #b1ce7b);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top:1em;
+}
+
+.login-button:hover {
+    background: linear-gradient(to right, #17eb04, #b1ce7b);
+  transform: translateY(-2px);
+}
+
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+/* ---------------------------------------------------- */
+/* Error message */
+.login-error {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border-radius: 0.5rem;
+  border: 1px solid #fecaca;
+}
+
+/* ---------------------------------------------------- */
+/* Footer */
+.login-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #ffffff !important;
+}
+
+.login-footer a {
+  color: #ffffff !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------- */
+/* Keyframes */
+/* Roll-in full screen effect */
+@keyframes rollInRight {
+  from {
+    transform: perspective(1000px) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(1000px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Fade-in + scale */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---------------------------------------------------- */
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+  .login-image {
+    display: none; /* Hide Lottie on small screens */
+  }
+  .login-container {
+    flex: none;
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .login-box {
+    max-width: 100%;
+  }
+  .login-heading {
+    font-size: 1.75rem;
+  }
+  .login-button {
+    font-size: 1rem;
+  }
+}

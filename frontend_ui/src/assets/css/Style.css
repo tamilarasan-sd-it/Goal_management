@@ -1,0 +1,301 @@
+/* Style.css */
+
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* width: 100%; Removed as it can cause issues with flex/grid items */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Allow scrolling for content that overflows */
+    font-family: 'Inter', sans-serif; /* Default font for body text */
+
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif; /* Modern professional headings */
+  font-weight: 600;
+  color: #111827; /* Darker gray for better contrast */
+}
+
+p, li, span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #374151; /* Medium gray for readability */
+}
+
+/* Header */
+header {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent header */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2563eb; /* Blue-600 */
+  font-family: 'Poppins', sans-serif;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  background-color: #B194E4; /* New primary color */
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: background 0.2s ease-in-out;
+}
+
+header button:hover {
+  background-color: #9575cd; /* Darker shade for hover */
+}
+
+header button.logout {
+  background-color: #ef4444;
+}
+
+header button.logout:hover {
+  background-color: #b91c1c;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(255, 255, 255, 0.8); /* Consistent with header */
+  backdrop-filter: blur(10px);
+  color: #4b5563;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  margin-top: auto;
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Utility Classes for Animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+.animate-slide-in-down {
+  animation: slideInDown 0.7s ease-out forwards;
+}
+.animate-shake {
+  animation: shake 0.6s;
+}
+.animate-pop-in {
+  animation: popIn 0.5s ease-out forwards;
+}
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+.animate-spin-slow {
+  animation: spinSlow 3s linear infinite;
+}
+.table-container {
+  overflow-x: auto; /* Horizontal scroll on small screens */
+  margin: 2rem 0;
+  width: 100%;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Base table styles */
+.styled-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+  font-family: 'Inter', sans-serif;
+  min-width: 400px; /* Keeps min width for usability */
+  max-width: 100%; /* Avoids overflow beyond container */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff; /* Cleaner table background */
+}
+
+.styled-table thead tr {
+  background-color: #B194E4; /* New primary color */
+  color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 6px 6px;
+  width: auto;
+  text-align: center;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f4f6;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #B194E4; /* New primary color */
+}
+
+.styled-table tbody tr:hover {
+  background-color: #e5e7eb;
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  /* Smaller font size for very small devices */
+  .styled-table {
+    font-size: 0.8em;
+    min-width: unset; /* Allow table to shrink */
+  }
+
+  /* Make the table horizontally scrollable */
+  .table-container {
+    margin: 1rem 0;
+  }
+
+  /* Optional: smaller padding for cells */
+  .styled-table th,
+  .styled-table td {
+    padding: 4px 4px;
+  }
+
+  /* Optional: fixed width for columns to keep layout */
+  .styled-table th,
+  .styled-table td {
+    min-width: 80px;
+  }
+}
+
+/* Optional: even smaller on very small screens */
+@media (max-width: 400px) {
+  .styled-table th,
+  .styled-table td {
+    min-width: 60px;
+    padding: 3px 3px;
+  }
+}
+
+.swal2-container .swal2-popup .swal2-icon {
+  margin: 0 auto !important;
+  display: block !important;
+}
+ .swal2-icon-content{
+    padding: 0px 0px 0px 0px !important;
+}
+.swal2-icon{
+    border: none !important;
+}
+/* .swal2-x-mark{
+    padding: 30px 0px 0px 80px !important; 
+} */
+
+
+
+
+.custom-header .MuiTableCell-head {
+  background: #2979ff;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Add this to your global CSS file */
+body::-webkit-scrollbar {
+  width: 4px;       /* width of vertical scrollbar */
+  height: 4px;      /* height of horizontal scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* or any color you want */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3); /* color of the thumb */
+  border-radius: 2px;   /* rounded edges */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,0.5);
+}
