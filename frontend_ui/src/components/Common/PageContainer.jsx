@@ -5,16 +5,17 @@ export default function PageContainer({ children }) {
     <Box
       sx={{
         minHeight: "100vh",
-        p: 3,
-        background: `
-          radial-gradient(circle at top,
-          rgba(37,99,235,.12),
-          transparent 40%),
-          linear-gradient(
-          180deg,
-          #EEF5FF,
-          #F9FBFF)
-        `,
+        p: 4,
+       background: `
+linear-gradient(
+135deg,
+#0F172A 0%,
+#111827 40%,
+#1E1B4B 100%
+),
+radial-gradient(circle at top right,#7C3AED33,transparent 45%),
+radial-gradient(circle at bottom left,#2563EB33,transparent 40%)
+`,
       }}
     >
       {children}

@@ -131,7 +131,6 @@ px: 5,
 backdropFilter:
 "blur(28px)",
 WebkitBackdropFilter: "blur(35px)",
-          backdropFilter: "blur(30px)",
        border: "1px solid rgba(120,160,255,.35)",
          boxShadow:
 "0 35px 80px rgba(37,99,235,.22)",
@@ -159,10 +158,9 @@ WebkitBackdropFilter: "blur(35px)",
           width: 100,
 height: 100,
 objectFit: "contain",
-filter: "drop-shadow(0 10px 25px rgba(37,99,235,.15))",
-mb: 2,
 filter:"drop-shadow(0 8px 16px rgba(37,99,235,.18))",
-            mb: 2,
+
+mb: 2,
           }}
         />
 
@@ -190,7 +188,6 @@ lineHeight:1.1,
 fontWeight:400,
 color:"#64748B",
 letterSpacing:".3px",
-            color: "#64748B",
             mb: 1,
           }}
         >

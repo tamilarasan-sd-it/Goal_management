@@ -21,8 +21,8 @@ export default function AppButton({
         fontSize: 16,
         textTransform: "none",
 
-        background:
-          "linear-gradient(135deg,#2563EB,#4F46E5)",
+     background:
+"linear-gradient(135deg,#7C3AED,#2563EB)",
 
         boxShadow:
           "0 12px 30px rgba(37,99,235,.30)",
@@ -32,10 +32,10 @@ export default function AppButton({
         "&:hover": {
           transform: "translateY(-3px)",
           background:
-            "linear-gradient(135deg,#1D4ED8,#4338CA)",
+            "linear-gradient(135deg,#9333EA,#4338CA)",
 
           boxShadow:
-            "0 18px 40px rgba(37,99,235,.40)",
+            "0 18px 45px rgba(124,58,237,.45)",
         },
 
         ...sx,
